@@ -16,6 +16,10 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    echo "NEXT_PUBLIC_API_URL=http://localhost:3000" > .env
+  displayName: 'Create .env file'
+
+- script: |
     npm install --legacy-peer-deps
     npm run build
   displayName: 'npm install and build'
